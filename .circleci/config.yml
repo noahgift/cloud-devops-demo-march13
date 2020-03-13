@@ -20,9 +20,6 @@ jobs:
       - run:
           command: make test
           name: Test
-      - run:
-          command: ./manage.py test
-          name: Test
 
 workflows:
   main:
