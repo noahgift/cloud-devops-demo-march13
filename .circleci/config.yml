@@ -12,9 +12,6 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: make format
-          name: Format
-      - run:
           command: make lint
           name: Lint
       - run:
