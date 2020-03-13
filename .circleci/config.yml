@@ -1,26 +1,28 @@
-version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
-jobs:
-  build-and-test:
+--- 
+jobs: 
+  build-and-test: 
     executor: python/default
-    steps:
+    steps: 
       - checkout
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - run: make install
+      - 
+        run: 
+          command: "make install"
           name: Install
-      - run:
-          command: make lint
+      - 
+        run: 
+          command: "make lint"
           name: Lint
-      - run:
-          command: make test
+      - 
+        run: 
+          command: "make test"
           name: Test
-
-workflows:
-  main:
-    jobs:
+orbs: 
+  python: circleci/python@0.2.1
+version: 2.1
+workflows: 
+  main: 
+    jobs: 
       - build-and-test
